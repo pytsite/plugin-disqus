@@ -13,6 +13,7 @@ __license__ = 'MIT'
 class Driver(_comments.driver.Abstract):
     """Disqus Comments Driver.
     """
+
     def get_name(self) -> str:
         """Get driver name.
         """
@@ -26,12 +27,18 @@ class Driver(_comments.driver.Abstract):
     def get_comments_count(self, thread_uid: str) -> int:
         """Get comments count for particular thread.
         """
+        short_name = _settings.get('disqus.short_name')
+        secret_key = _settings.get('disqus.secret_key')
+
+        if not short_name or not secret_key:
+            return 0
+
         count = 0
 
         try:
             r = _requests.get('https://disqus.com/api/3.0/forums/listThreads.json', {
-                'api_secret': _settings.get('disqus.secret_key'),
-                'forum': _settings.get('disqus.short_name'),
+                'api_secret': secret_key,
+                'forum': short_name,
                 'thread': 'ident:' + thread_uid,
                 'limit': 1,
             }).json()

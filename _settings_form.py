@@ -1,4 +1,4 @@
-"""PytSite Disqus Settings Form.
+"""PytSite Disqus Plugin Settings Form.
 """
 from pytsite import widget as _widget, lang as _lang, settings as _settings
 
@@ -21,6 +21,7 @@ class Form(_settings.Form):
             uid='setting_secret_key',
             weight=20,
             label=_lang.t('disqus@secret_key'),
+            required=True,
             help=_lang.t('disqus@secret_key_setup_help'),
         ))
 

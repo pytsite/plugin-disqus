@@ -1,6 +1,6 @@
 # PytSite Disqus Plugin
 
-This plugin adds [Disqus](https://disqus.com) functionality to the [PytSite](https://pytsite.xyz).
+[Disqus](https://disqus.com) plugin for [https://pytsite.xyz](PytSite).
 
 
 ## Installation
@@ -11,5 +11,11 @@ This plugin adds [Disqus](https://disqus.com) functionality to the [PytSite](htt
 
 ## Changelog
 
+### 0.2 (2016-11-19)
+- Added user notification.
+- Added configuration checking in comments driver and widget code. 
+- Removed non-necessary event handler.
+
+
 ### 0.1 (2016-11-09)
-First release.
+- First release.
