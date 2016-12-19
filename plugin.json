@@ -1,1 +1,17 @@
-{}
+{
+  "description": {
+    "en": "Disqus support",
+    "ru": "Поддержка Disqus",
+    "uk": "Підримка Disqus"
+  },
+  "url": "https://github.com/pytsite/plugin-disqus",
+  "author": {
+    "name": "Alexander Shepetko",
+    "email": "a@shepetko.com",
+    "url": "https://shepetko.com"
+  },
+  "requires": {
+    "packages": [],
+    "plugins": []
+  }
+}
