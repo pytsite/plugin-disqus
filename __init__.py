@@ -16,7 +16,7 @@ def _init():
     tpl.register_package(__name__, alias='disqus')
 
     # Lang globals
-    lang.register_global('disqus_admin_settings_url', lambda: settings.form_url('disqus'))
+    lang.register_global('disqus_admin_settings_url', lambda language, args: settings.form_url('disqus'))
 
     # Comments driver
     comments.register_driver(_comments.Driver())

@@ -1,8 +1,8 @@
 {
   "description": {
-    "en": "Disqus support",
-    "ru": "Поддержка Disqus",
-    "uk": "Підримка Disqus"
+    "en": "Disqus",
+    "ru": "Disqus",
+    "uk": "Disqus"
   },
   "url": "https://github.com/pytsite/plugin-disqus",
   "author": {

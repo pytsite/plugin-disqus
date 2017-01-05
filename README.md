@@ -5,6 +5,10 @@
 
 ## Changelog
 
+### 0.2.2 (2017-01-05)
+Translations fixed.
+
+
 ### 0.2.1 (2016-12-19)
 plugin.json updated.
 
@@ -16,4 +20,4 @@ plugin.json updated.
 
 
 ### 0.1 (2016-11-09)
-- First release.
+First release.
