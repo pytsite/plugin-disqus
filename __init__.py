@@ -8,7 +8,8 @@ __license__ = 'MIT'
 def _init():
     """Init wrapper.
     """
-    from pytsite import comments, tpl, lang, events, permissions, settings
+    from pytsite import tpl, lang, events, permissions, settings
+    from plugins import comments
     from . import _eh, _comments, _settings_form
 
     # Resources
