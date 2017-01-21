@@ -32,7 +32,7 @@ class Comments(_widget.Abstract):
         """
         return self._thread_uid
 
-    def get_html_em(self, **kwargs) -> _html.Element:
+    def _get_element(self, **kwargs) -> _html.Element:
         """Render the widget.
         :param **kwargs:
         """
