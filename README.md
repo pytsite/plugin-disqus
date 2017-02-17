@@ -4,6 +4,10 @@
 ## Changelog
 
 
+### 0.3.3 (2017-02-17)
+Support for latest `comments` plugin changes.
+
+
 ### 0.3.2 (2017-01-21)
 Support latest PytSite `widget`'s changes.
 

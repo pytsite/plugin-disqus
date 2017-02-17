@@ -16,9 +16,14 @@ class Driver(_comments.driver.Abstract):
     """
 
     def get_name(self) -> str:
-        """Get driver name.
+        """Get driver's name.
         """
         return 'disqus'
+
+    def get_description(self) -> str:
+        """Get driver's description.
+        """
+        return 'Disqus'
 
     def get_widget(self, widget_uid: str, thread_uid: str) -> _DisqusWidget:
         """Get comments widget.
