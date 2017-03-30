@@ -8,7 +8,7 @@ __license__ = 'MIT'
 def _init():
     """Init wrapper.
     """
-    from pytsite import tpl, lang, events, permissions, settings
+    from pytsite import tpl, lang, permissions, settings, router
     from plugins import comments
     from . import _eh, _comments, _settings_form
 
@@ -29,7 +29,7 @@ def _init():
     settings.define('disqus', _settings_form.Form, 'disqus@disqus', 'fa fa-comments', 'disqus.settings.manage')
 
     # Event handlers
-    events.listen('pytsite.router.dispatch', _eh.router_dispatch)
+    router.on_dispatch(_eh.router_dispatch)
 
 
 _init()

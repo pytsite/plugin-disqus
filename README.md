@@ -3,6 +3,9 @@
 
 ## Changelog
 
+### 0.3.5 (2017-03-30)
+Fixed notifications. 
+
 
 ### 0.3.4 (2017-02-23)
 Support for latest `comments` plugin changes.
