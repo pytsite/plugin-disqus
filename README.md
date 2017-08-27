@@ -3,6 +3,11 @@
 
 ## Changelog
 
+
+### 0.3.6 (2017-08-27)
+`plugin.json` updated.
+
+
 ### 0.3.5 (2017-03-30)
 Fixed notifications. 
 
