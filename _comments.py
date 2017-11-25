@@ -2,8 +2,8 @@
 """
 import requests as _requests
 from typing import Iterable as _Iterable
-from pytsite import logger as _logger, auth as _auth, settings as _settings
-from plugins import comments as _comments
+from pytsite import logger as _logger
+from plugins import auth as _auth, comments as _comments, settings as _settings
 from ._widget import Comments as _DisqusWidget
 
 __author__ = 'Alexander Shepetko'

@@ -8,13 +8,13 @@ __license__ = 'MIT'
 def _init():
     """Init wrapper.
     """
-    from pytsite import tpl, lang, permissions, settings, router
-    from plugins import comments
+    from pytsite import tpl, lang, router
+    from plugins import comments, permissions, settings
     from . import _eh, _comments, _settings_form
 
     # Resources
-    lang.register_package(__name__, alias='disqus')
-    tpl.register_package(__name__, alias='disqus')
+    lang.register_package(__name__)
+    tpl.register_package(__name__)
 
     # Lang globals
     lang.register_global('disqus_admin_settings_url', lambda language, args: settings.form_url('disqus'))

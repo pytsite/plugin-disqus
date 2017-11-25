@@ -1,6 +1,6 @@
 {
-  "name": "plugins.disqus",
-  "version": "0.3.6",
+  "name": "disqus",
+  "version": "1.0",
   "description": {
     "en": "Disqus",
     "ru": "Disqus",
@@ -15,7 +15,11 @@
   "requires": {
     "packages": [],
     "plugins": [
-      "comments"
+      "auth",
+      "comments",
+      "permissions",
+      "settings",
+      "widget"
     ]
   }
 }
