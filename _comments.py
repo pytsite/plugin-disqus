@@ -2,8 +2,8 @@
 """
 import requests as _requests
 from typing import Iterable as _Iterable
-from pytsite import logger as _logger
-from plugins import auth as _auth, comments as _comments, settings as _settings
+from pytsite import reg as _reg, logger as _logger
+from plugins import auth as _auth, comments as _comments
 from ._widget import Comments as _DisqusWidget
 
 __author__ = 'Alexander Shepetko'
@@ -33,8 +33,8 @@ class Driver(_comments.driver.Abstract):
     def get_comments_count(self, thread_uid: str) -> int:
         """Get comments count for particular thread.
         """
-        short_name = _settings.get('disqus.short_name')
-        secret_key = _settings.get('disqus.secret_key')
+        short_name = _reg.get('disqus.short_name')
+        secret_key = _reg.get('disqus.secret_key')
 
         if not short_name or not secret_key:
             return 0

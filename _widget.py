@@ -1,7 +1,7 @@
 """PytSite Disqus Plugin Widget.
 """
-from pytsite import html as _html, tpl as _tpl
-from plugins import widget as _widget, settings as _settings
+from pytsite import html as _html, tpl as _tpl, reg as _reg
+from plugins import widget as _widget
 
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
@@ -16,7 +16,7 @@ class Comments(_widget.Abstract):
         """
         super().__init__(uid, **kwargs)
 
-        self._short_name = _settings.get('disqus.short_name')
+        self._short_name = _reg.get('disqus.short_name')
         self._thread_uid = kwargs.get('thread_uid')
 
         self._css += ' widget-disqus'
