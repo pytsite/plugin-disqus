@@ -1,16 +1,17 @@
 """PytSite Disqus Plugin Widget.
 """
-from pytsite import html as _html, tpl as _tpl, reg as _reg
-from plugins import widget as _widget
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import html as _html, tpl as _tpl, reg as _reg
+from plugins import widget as _widget
 
 
 class Comments(_widget.Abstract):
     """Disqus Comments Widget.
     """
+
     def __init__(self, uid: str, **kwargs):
         """Init.
         """

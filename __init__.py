@@ -5,9 +5,9 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 
-def plugin_load():
+def plugin_load_uwsgi():
     from pytsite import tpl, lang, router
-    from plugins import comments, permissions, settings
+    from plugins import comments, settings
     from . import _eh, _comments, _settings_form
 
     # Resources
@@ -20,11 +20,8 @@ def plugin_load():
     # Comments driver
     comments.register_driver(_comments.Driver())
 
-    # Permissions
-    permissions.define_permission('disqus.settings.manage', 'disqus@manage_disqus_settings', 'app')
-
     # Settings
-    settings.define('disqus', _settings_form.Form, 'disqus@disqus', 'fa fa-comments', 'disqus.settings.manage')
+    settings.define('disqus', _settings_form.Form, 'disqus@disqus', 'fa fa-comments', 'dev')
 
     # Event handlers
     router.on_dispatch(_eh.router_dispatch)

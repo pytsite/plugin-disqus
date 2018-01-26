@@ -1,11 +1,11 @@
 """Disqus Package Event Handlers.
 """
-from pytsite import lang as _lang, router as _router, reg as _reg
-from plugins import auth as _auth
-
 __author__ = 'Alexander Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
+
+from pytsite import lang as _lang, router as _router, reg as _reg
+from plugins import auth as _auth
 
 
 def router_dispatch():

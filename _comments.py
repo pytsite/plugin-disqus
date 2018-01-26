@@ -1,14 +1,14 @@
 """PytSite Disqus Comments Driver.
 """
+__author__ = 'Alexander Shepetko'
+__email__ = 'a@shepetko.com'
+__license__ = 'MIT'
+
 import requests as _requests
 from typing import Iterable as _Iterable
 from pytsite import reg as _reg, logger as _logger
 from plugins import auth as _auth, comments as _comments
 from ._widget import Comments as _DisqusWidget
-
-__author__ = 'Alexander Shepetko'
-__email__ = 'a@shepetko.com'
-__license__ = 'MIT'
 
 
 class Driver(_comments.driver.Abstract):
