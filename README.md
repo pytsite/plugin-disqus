@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.2.2 (2018-02-10)
+
+Event handler fixed.
+
+
 ### 1.2.1 (2017-12-26)
 
 Init code refactored.
