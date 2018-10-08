@@ -1,6 +1,6 @@
 {
   "name": "disqus",
-  "version": "1.2.2",
+  "version": "2.0",
   "description": {
     "en": "Disqus",
     "ru": "Disqus",
@@ -8,18 +8,18 @@
   },
   "url": "https://github.com/pytsite/plugin-disqus",
   "author": {
-    "name": "Alexander Shepetko",
+    "name": "Oleksandr Shepetko",
     "email": "a@shepetko.com",
     "url": "https://shepetko.com"
   },
   "requires": {
-    "packages": [],
-    "plugins": [
-      "auth>=1.8",
-      "comments",
-      "permissions",
-      "settings",
-      "widget"
-    ]
+    "pytsite": ">=8",
+    "plugins": {
+      "auth": "3.x",
+      "comments": "2.x",
+      "permissions": "1.x",
+      "settings": "2.x",
+      "widget": "3.x"
+    }
   }
 }
