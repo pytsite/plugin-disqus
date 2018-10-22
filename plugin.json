@@ -1,6 +1,6 @@
 {
   "name": "disqus",
-  "version": "2.0",
+  "version": "2.1",
   "description": {
     "en": "Disqus",
     "ru": "Disqus",
@@ -19,7 +19,7 @@
       "comments": "2.x",
       "permissions": "1.x",
       "settings": "2.x",
-      "widget": "3.x"
+      "widget": "4.x"
     }
   }
 }
