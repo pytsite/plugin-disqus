@@ -1,6 +1,6 @@
 {
   "name": "disqus",
-  "version": "2.1",
+  "version": "2.2",
   "description": {
     "en": "Disqus",
     "ru": "Disqus",
@@ -15,11 +15,11 @@
   "requires": {
     "pytsite": ">=8",
     "plugins": {
-      "auth": "3.x",
-      "comments": "2.x",
-      "permissions": "1.x",
-      "settings": "2.x",
-      "widget": "4.x"
+      "auth": "^3.0",
+      "comments": "^3.0",
+      "permissions": "^1.0",
+      "settings": "^2.0",
+      "widget": "^4.0"
     }
   }
 }
