@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 2.3 (2019-07-12)
+
+Support of `pytsite-9.x`.
+
+
 ### 2.2 (2019-05-08)
 
 Support of `comments-3.0`.

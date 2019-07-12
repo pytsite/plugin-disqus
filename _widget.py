@@ -4,11 +4,12 @@ __author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-from pytsite import html as _html, tpl as _tpl, reg as _reg
-from plugins import widget as _widget
+import htmler
+from pytsite import tpl, reg
+from plugins import widget
 
 
-class Comments(_widget.Abstract):
+class Comments(widget.Abstract):
     """Disqus Comments Widget.
     """
 
@@ -17,7 +18,7 @@ class Comments(_widget.Abstract):
         """
         super().__init__(uid, **kwargs)
 
-        self._short_name = _reg.get('disqus.short_name')
+        self._short_name = reg.get('disqus.short_name')
         self._thread_uid = kwargs.get('thread_uid')
 
         self._css += ' widget-disqus'
@@ -34,8 +35,8 @@ class Comments(_widget.Abstract):
         """
         return self._thread_uid
 
-    def _get_element(self, **kwargs) -> _html.Element:
+    def _get_element(self, **kwargs) -> htmler.Element:
         """Render the widget.
         :param **kwargs:
         """
-        return _html.Div(_tpl.render('disqus@widget', {'widget': self}), uid=self._uid)
+        return htmler.Div(tpl.render('disqus@widget', {'widget': self}), uid=self._uid)

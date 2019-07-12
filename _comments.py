@@ -4,14 +4,14 @@ __author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-import requests as _requests
-from typing import Iterable as _Iterable
-from pytsite import reg as _reg, logger as _logger
-from plugins import auth as _auth, comments as _comments
-from ._widget import Comments as _DisqusWidget
+import requests
+from typing import Iterable
+from pytsite import reg, logger
+from plugins import auth, comments
+from ._widget import Comments as DisqusWidget
 
 
-class Driver(_comments.driver.Abstract):
+class Driver(comments.driver.Abstract):
     """Disqus Comments Driver.
     """
 
@@ -25,16 +25,16 @@ class Driver(_comments.driver.Abstract):
         """
         return 'Disqus'
 
-    def get_widget(self, widget_uid: str, thread_uid: str) -> _DisqusWidget:
+    def get_widget(self, widget_uid: str, thread_uid: str) -> DisqusWidget:
         """Get comments widget.
         """
-        return _DisqusWidget(widget_uid, thread_uid=thread_uid)
+        return DisqusWidget(widget_uid, thread_uid=thread_uid)
 
     def get_comments_count(self, thread_uid: str) -> int:
         """Get comments count for particular thread.
         """
-        short_name = _reg.get('disqus.short_name')
-        secret_key = _reg.get('disqus.secret_key')
+        short_name = reg.get('disqus.short_name')
+        secret_key = reg.get('disqus.secret_key')
 
         if not short_name or not secret_key:
             return 0
@@ -42,7 +42,7 @@ class Driver(_comments.driver.Abstract):
         count = 0
 
         try:
-            r = _requests.get('https://disqus.com/api/3.0/forums/listThreads.json', {
+            r = requests.get('https://disqus.com/api/3.0/forums/listThreads.json', {
                 'api_secret': secret_key,
                 'forum': short_name,
                 'thread': 'ident:' + thread_uid,
@@ -53,21 +53,21 @@ class Driver(_comments.driver.Abstract):
                 count = r['response'][0]['posts']
 
         except Exception as e:
-            _logger.error(e)
+            logger.error(e)
 
         return count
 
-    def create_comment(self, thread_uid: str, body: str, author: _auth.model.AbstractUser,
-                       status: str = 'published', parent_uid: str = None) -> _comments.model.AbstractComment:
+    def create_comment(self, thread_uid: str, body: str, author: auth.model.AbstractUser,
+                       status: str = 'published', parent_uid: str = None) -> comments.model.AbstractComment:
         """Create new comment.
         """
         raise NotImplementedError("Not implemented yet.")
 
     def get_comments(self, thread_uid: str, limit: int = 0, skip: int = 0) \
-            -> _Iterable[_comments.model.AbstractComment]:
+            -> Iterable[comments.model.AbstractComment]:
         raise NotImplementedError("Not implemented yet.")
 
-    def get_comment(self, uid: str) -> _comments.model.AbstractComment:
+    def get_comment(self, uid: str) -> comments.model.AbstractComment:
         """Get single comment by UID.
         """
         raise NotImplementedError("Not implemented yet.")
@@ -82,7 +82,7 @@ class Driver(_comments.driver.Abstract):
         """
         raise NotImplementedError("Not implemented yet.")
 
-    def get_permissions(self, user: _auth.model.AbstractUser = None) -> dict:
+    def get_permissions(self, user: auth.model.AbstractUser = None) -> dict:
         """Get permissions definition for user.
         """
         return {'create': True}
